@@ -14,10 +14,24 @@ public class RomanNumeralTest {
     }
 
     @Test
-    public void numberWithManyDigits() {
+    public void numberWithDoubleDigits(){
         RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("VIII");
-        Assertions.assertEquals(8, result);
+        int result = roman.convert("XCIX");
+        Assertions.assertEquals(99,result);
+    }
+
+    @Test
+    public void numberWithTripleDigits() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("C");
+        Assertions.assertEquals(100, result);
+    }
+
+    @Test
+    public void numberWithFourDigits(){
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("MMMMMMMMMCMXCIX");
+        Assertions.assertEquals(9999, result);
     }
 
     @Test

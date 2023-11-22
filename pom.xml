@@ -38,11 +38,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
-        <dependency>
+<!--        <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.6.0</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 
     <build>
@@ -81,11 +81,11 @@
                         </configuration>
                     </execution>
                 </executions>
-                <configuration>
+                <!--<configuration>
                     <systemPropertyVariables>
                         <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
                     </systemPropertyVariables>
-                </configuration>
+                </configuration>-->
             </plugin>
 
             <plugin>

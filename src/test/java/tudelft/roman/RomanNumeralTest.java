@@ -3,6 +3,8 @@ package tudelft.roman;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 public class RomanNumeralTest {
 
 
@@ -46,5 +48,21 @@ public class RomanNumeralTest {
         RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("XLIV");
         Assertions.assertEquals(44, result);
+    }
+
+/*    @Test
+    public void invalidNumbers() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("IX - invalidNumber");
+        if(result == null){
+            Assertions.assertFalse(false, "Invalid number");
+        }
+    }*/
+
+    @Test
+    public void invalidNumbers() {
+        RomanNumeral roman = new RomanNumeral();
+        Integer result = roman.convert("IXO"); //Invalid number
+        Assertions.assertEquals(0, result);
     }
 }

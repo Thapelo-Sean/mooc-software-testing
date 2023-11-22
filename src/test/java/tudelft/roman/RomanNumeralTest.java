@@ -50,15 +50,6 @@ public class RomanNumeralTest {
         Assertions.assertEquals(44, result);
     }
 
-/*    @Test
-    public void invalidNumbers() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("IX - invalidNumber");
-        if(result == null){
-            Assertions.assertFalse(false, "Invalid number");
-        }
-    }*/
-
     @Test
     public void invalidNumbers() {
         RomanNumeral roman = new RomanNumeral();

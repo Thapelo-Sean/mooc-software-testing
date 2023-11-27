@@ -1,9 +1,11 @@
 package tudelft.invoicemocked;
 
+import java.util.Objects;
+
 public class Invoice {
 
-    private String customer;
-    private double value;
+    private final String customer;
+    private final double value;
 
     public Invoice(String customer, double value) {
         this.customer = customer;
@@ -26,7 +28,7 @@ public class Invoice {
         Invoice invoice = (Invoice) o;
 
         if (Double.compare(invoice.value, value) != 0) return false;
-        return customer != null ? customer.equals(invoice.customer) : invoice.customer == null;
+        return Objects.equals(customer, invoice.customer);
     }
 
     @Override

@@ -2,7 +2,7 @@ package tudelft.discount;
 
 public class DiscountApplier {
 
-    private final ProductDao dao;
+    private ProductDao dao;
 
     public DiscountApplier (ProductDao dao) {
         this.dao = dao;

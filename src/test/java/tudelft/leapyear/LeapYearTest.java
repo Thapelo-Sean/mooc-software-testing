@@ -6,23 +6,16 @@ import org.junit.jupiter.api.Test;
 public class LeapYearTest {
 
     boolean result;
+    LeapYear ly;
 
     @Test
     public void leapYearThatIsNonCenturial(){
         LeapYear ly = new LeapYear();
-        //boolean result = ly.isLeapYear(2020);
-        Assertions.assertTrue(result);
+        Assertions.assertTrue(ly.isLeapYear(2020));
     }
 
     @Test
     public void leapCenturialYear(){
-        LeapYear ly = new LeapYear();
-        boolean result = ly.isLeapYear(2000);
-        Assertions.assertTrue(result);
-    }
-
-    @Test
-    public void leapCenturialYears() {
         LeapYear ly = new LeapYear();
         Assertions.assertTrue(ly.isLeapYear(2000));
     }

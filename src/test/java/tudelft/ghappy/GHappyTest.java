@@ -1,6 +1,6 @@
 package tudelft.ghappy;
 
-import org.jugit nit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class GHappyTest {

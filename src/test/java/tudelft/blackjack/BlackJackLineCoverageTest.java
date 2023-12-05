@@ -29,5 +29,9 @@ public class BlackJackLineCoverageTest {
         Assertions.assertEquals(21, result);
     }
 
-
+    @Test
+    public void onePlayerGoTooHigh(){
+        int result = new BlackJack().play(1,22);
+        Assertions.assertEquals(1,result);
+    }
 }

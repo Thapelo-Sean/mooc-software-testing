@@ -8,42 +8,42 @@ public class GHappyTest {
     @Test
     public void noGcharacter(){
         GHappy gHappy = new GHappy();
-        boolean input = gHappy.gHappy("xxxxxx");
-        Assertions.assertEquals(false, input);
+        boolean input = gHappy.gHappy("xxyyxxyy");
+        Assertions.assertFalse(input);
     }
 
     @Test
     public void singleGcharacter(){
         GHappy gHappy = new GHappy();
         boolean input = gHappy.gHappy("xxgxxx");
-        Assertions.assertEquals(false, input);
+        Assertions.assertFalse(input);
     }
 
     @Test
     public void doubleGcharacter(){
         GHappy gHappy = new GHappy();
         boolean input = gHappy.gHappy("xxggxx");
-        Assertions.assertEquals(true, input);
+        Assertions.assertTrue(input);
     }
 
     @Test
     public void multipleGcharacters(){
         GHappy gHappy = new GHappy();
         boolean input = gHappy.gHappy("xxggyyggxx");
-        Assertions.assertEquals(true, input);
+        Assertions.assertTrue(input);
     }
 
     @Test
     public void separatedGcharacters(){
         GHappy gHappy = new GHappy();
         boolean input = gHappy.gHappy("xxggyygxx");
-        Assertions.assertEquals(false, input);
+        Assertions.assertFalse(input);
     }
 
     @Test
     public void onlyGcharacter(){
         GHappy gHappy = new GHappy();
         boolean input = gHappy.gHappy("gggggg");
-        Assertions.assertEquals(true, input);
+        Assertions.assertTrue(input);
     }
 }

@@ -6,10 +6,11 @@ import org.junit.jupiter.api.Test;
 public class CountLettersTest {
 
     @Test
-    public void multipleMatchingWords() {
-        int words = new CountLetters().count("cats|dogs");
-        Assertions.assertEquals(2, words);
+    public void twoMatchingWords(){
+        int words = new CountLetters().count("car | cars");
+        Assertions.assertEquals(2,words);
     }
+
 
     @Test
     public void lastWordDoesNotMatch() {

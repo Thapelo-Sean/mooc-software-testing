@@ -9,6 +9,8 @@ public class BlackJack {
             ln = 0;
         if(rn > 21)
             rn = 0;
+        if(rn == ln)
+            return 0;
         if(ln > rn)
             return ln;
         else

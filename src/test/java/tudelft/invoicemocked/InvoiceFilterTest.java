@@ -11,8 +11,8 @@ public class InvoiceFilterTest {
     @Test
     void filterInvoices() {
 
-        Invoice mauricio = new Invoice("Mauricio", 20.0);
-        Invoice arie = new Invoice("Arie", 300.0);
+        Invoice mauricio = new Invoice("Mauricio", 99.0);
+        Invoice arie = new Invoice("Arie", 101.0);
 
         InvoiceDao dao = Mockito.mock(InvoiceDao.class);
 
@@ -26,4 +26,21 @@ public class InvoiceFilterTest {
         Assertions.assertEquals(1, result.size());
     }
 
+    @Test
+    public void filterInvoice(){
+
+        Invoice invoice1 = new Invoice("John", 98.0);
+        Invoice invoice2 = new Invoice("Simon", 99.0);
+
+        InvoiceDao dao = Mockito.mock(InvoiceDao.class);
+
+        List<Invoice> results = Arrays.asList(invoice1, invoice2);
+        Mockito.when(dao.all()).thenReturn(results);
+
+        InvoiceFilter filter = new InvoiceFilter(dao);
+        List <Invoice> result = filter.filter();
+
+        Assertions.assertEquals(invoice1, result.get(0));
+        Assertions.assertEquals(2, result.size());
+    }
 }

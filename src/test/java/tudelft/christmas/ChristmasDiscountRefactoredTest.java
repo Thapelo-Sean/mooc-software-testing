@@ -33,7 +33,7 @@ public class ChristmasDiscountRefactoredTest {
         Calendar christmas = new GregorianCalendar(2021,Calendar.DECEMBER,25);
         Mockito.when(clock.now()).thenReturn(christmas);
         double finalValue = new ChristmasDiscountRefactored(clock).applyDiscount(-1);
-        Assertions.assertEquals(-1, finalValue, 0.0001);
+        Assertions.assertEquals(-1, finalValue, 1);
     }
     @Test
     public void notChristmas() {

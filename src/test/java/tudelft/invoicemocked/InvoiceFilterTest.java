@@ -33,7 +33,6 @@ public class InvoiceFilterTest {
         Invoice invoice2 = new Invoice("Simon", 99.0);
 
         InvoiceDao dao = Mockito.mock(InvoiceDao.class);
-
         List<Invoice> results = Arrays.asList(invoice1, invoice2);
         Mockito.when(dao.all()).thenReturn(results);
 

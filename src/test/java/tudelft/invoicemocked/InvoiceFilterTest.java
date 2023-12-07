@@ -27,7 +27,7 @@ public class InvoiceFilterTest {
     }
 
     @Test
-    public void filterInvoice(){
+    public void filterInvalidInvoice(){
 
         Invoice invoice1 = new Invoice("John", 98.0);
         Invoice invoice2 = new Invoice("Simon", 99.0);

@@ -7,9 +7,11 @@ public class Mirror {
 
         int begin = 0;
         int end = string.length() - 1;
-        for (; begin < end; begin++, end--) {
+        while ( begin < end ) {
             if (string.charAt(begin) == string.charAt(end)) {
-                mirror += String.valueOf(string.charAt(end));
+                mirror += string.charAt(end);
+                begin++;
+                end--;
             }
             else {
                 break;

@@ -1,41 +1,30 @@
 package tudelft.mirror;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class MirrorTest {
 
-    @Test
-    public void mirrorWithEmptyString(){
-        Mirror mirror = new Mirror();
-        String result = mirror.mirrorEnds("");
-        Assertions.assertEquals("", result);
-    }
+   @ParameterizedTest
+    @CsvSource({"abccd", "reddar", "deffied", "spoops", ""})
+    public void mirrorTest(String input){
+       Mirror mirror = new Mirror();
+       String expected = expectedResult(input);
+       String result = mirror.mirrorEnds(input);
+       Assertions.assertEquals(expected, result);
+   }
 
-    @Test
-    public void mirrorWithSingleLetterOutput(){
-        Mirror mirror = new Mirror();
-        String result = mirror.mirrorEnds("reddar");
-        Assertions.assertEquals("r",result);
-    }
-
-    @Test
-    public void mirrorWithDoubleLetterOutput(){
-        Mirror mirror = new Mirror();
-        String result = mirror.mirrorEnds("deffied");
-        Assertions.assertEquals("de",result);
-    }
-
-    @Test
-    public void mirrorWithTripleLetterOutput(){
-        Mirror mirror = new Mirror();
-        String result = mirror.mirrorEnds("spoops");
-        Assertions.assertEquals("spo", result);
-    }
-     @Test
-    public void mirrorWithUnmatchedLetters(){
-        Mirror mirror = new Mirror();
-        String result = mirror.mirrorEnds("abccbd");
-        Assertions.assertEquals("", result);
-    }
+    private String expectedResult(String input) {
+        switch (input) {
+            case "reddar":
+                return "r";
+            case "deffied":
+                return "de";
+            case "spoops":
+                return "spo";
+            default:
+                return "";
+        }
+   }
 }
